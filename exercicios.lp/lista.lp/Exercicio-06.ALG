@@ -1,27 +1,23 @@
-Algoritmo "Exercicio-07"
+Algoritmo "Exercicio-06"
 
-// 7) Faça um algoritmo que leia a idade de uma pessoa, expressa em anos,
-// meses e dias, e escreva a idade dessa pessoa expressa apenas em dias.
-// Considerar ano com 365 dias e mês com 30 dias.
+// 6) Escreva um algoritmo para ler as dimensões de um retângulo
+// (base e altura), calcular e escrever a área do retângulo.
 
 Var
 
-idade, anos, meses, dias : inteiro
+base, altura, area : inteiro
 
 Inicio
 
-escreval("Digite sua idade em anos, meses e dias")
-escreval("Quantos anos?")
-leia (anos)
+escreval("Calcular a area de um retangulo")
+escreval("Digite a base do retangulo:")
+leia(base)
 
-escreval("Quantos meses?")
-leia (meses)
+escreval("Digite a altura do retangulo:")
+leia(altura)
 
-escreval("Quantos dias?")
-leia (dias)
-
-idade := dias*1 + meses*30 + anos*365
-escreval("Voce tem", idade, " dias")
+area := base * altura
+escreval("A area do retangulo e",area," metros quadrados")
 
 
 Fimalgoritmo
