@@ -6,11 +6,24 @@ Algoritmo "Exercicio-09"
 
 Var
 
-SalAtual, SalNovo,
+// SA = Salario Atual
+// RJ = Reajuste
+// SN = Salario Novo
+// VR = Valor do Reajuste
 
+SA, RJ : inteiro
+SN, VR: real
 
 Inicio
-// Seção de Comandos, procedimento, funções, operadores, etc... 
 
+escreval("Digite o salario atual:")
+leia(SA)
+
+escreval("Porcentagem de reajuste:")
+leia(RJ)
+
+VR := (SA*RJ)/100
+SN := VR + SA
+escreval("O novo salrario e", SN)
 
 Fimalgoritmo
