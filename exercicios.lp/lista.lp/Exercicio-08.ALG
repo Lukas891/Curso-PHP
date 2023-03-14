@@ -22,15 +22,14 @@ escreval ("Total de votos Validos")
 leia(V)
 
 Total := B + N + V
-escreval ("Total de eleitores:",Total)
 
-PB := Total/B
+PB := B/Total*100
 escreval ("O percentual de Votos em Branco e",PB,"%")
 
-PN := Total/N
+PN := N/Total*100
 escreval ("O percentual de Votos Nulos e",PN,"%")
 
-PV := Total/V
+PV := V/Total*100s
 escreval ("O percentual de Votos Validos e",PV,"%")
-
+escreval ("Total de eleitores:",Total)
 Fimalgoritmo
