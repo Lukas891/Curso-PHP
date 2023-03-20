@@ -9,7 +9,7 @@ Var
 
 Inicio
 
-   cont := 0
+   cont := 1
    enquanto (cont <= 10) faca
       escreval(cont)
       cont := cont + 1

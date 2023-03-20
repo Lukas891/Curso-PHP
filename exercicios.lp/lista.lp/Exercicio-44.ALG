@@ -15,7 +15,7 @@ Inicio
    repita
       Escreval("Digite outro numero")
       leia (n2)
-   ate (n2 > 0)
+   ate (n2 <> 0)
    divi := n1 / n2
    escreval("O resultado do primeiro numero dividido pelo segundo e:",divi)
 
