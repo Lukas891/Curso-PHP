@@ -5,14 +5,14 @@ Algoritmo "Exercicio-50"
 
 Var
 
-   cont : inteiro
-
+   N : vetor [1..10] de inteiro
+   i : inteiro
+   soma : inteiro
+   
 Inicio
 
-   cont := 1
-   enquanto (cont <= 10) faca
-      escreval(cont)
-      cont := cont + 1
-   fimenquanto
-
+    para i de 1 ate 10 faca
+         escreval(i)
+    fimpara
+    
 Fimalgoritmo

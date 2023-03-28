@@ -21,6 +21,7 @@ Inicio
       cont1 := cont1 + 1
    fimenquanto
    escreval("Nota da 1a avaliacao: ",soma1," pts")
+   
 // Notas 2a avaliacao
    escreval("Digite cada nota da 2a avaliacao:")
       escreval("Quantas notas possui a 2a avaliacao?:")

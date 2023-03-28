@@ -5,14 +5,12 @@ Algoritmo "Exercicio-51"
 
 Var
 
-   cont : inteiro
-
+   vet : vetor [1..10] de inteiro
+   i : inteiro
 Inicio
 
-   cont := 10
-   enquanto (cont >= 0) faca
-      escreval(cont)
-      cont := cont - 1
-   fimenquanto
+   para i de 10 ate 1 passo -1 faca
+        escreval(i)
+   fimpara
 
 Fimalgoritmo

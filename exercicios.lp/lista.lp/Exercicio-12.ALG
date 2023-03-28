@@ -9,16 +9,16 @@ Algoritmo "Exercicio-12"
 
 Var
 
-F : inteiro
-C : real
+   F : inteiro
+   C : real
 
 Inicio
 
-escreval("Digite o grau em Fahrenheit")
-leia(F)
+   escreval("Digite o grau em Fahrenheit")
+   leia(F)
 
-C := (F-32)*5/9
+   C := (F-32)*5/9
 
-escreval("Graus Fahrenheit sao",C," Celcius")
+   escreval("Graus Fahrenheit sao",C," Celcius")
 
 Fimalgoritmo

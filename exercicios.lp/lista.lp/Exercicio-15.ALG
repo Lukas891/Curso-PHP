@@ -3,15 +3,15 @@ Algoritmo "Exercicio-15"
 // (considere o valor zero como positivo).
 Var
 
-Valor : real
+   Valor : real
 
 Inicio
 
-escreval("Digite um numero:")
-leia(Valor)
-se (Valor >=(-1)) entao
-escreval("O valor e Positivo")
-senao
-escreval("O valor e Negativo")
-fimse
+   escreval("Digite um numero:")
+   leia(Valor)
+   se (Valor >=(-1)) entao
+      escreval("O valor e Positivo")
+   senao
+      escreval("O valor e Negativo")
+   fimse
 Fimalgoritmo
