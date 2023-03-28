@@ -8,26 +8,26 @@ Algoritmo "Exercicio-38"
 
 Var
 
-Usuario, Senha: inteiro
+   Usuario, Senha: inteiro
 
 Inicio
 
-escreval("Digite o usuario")
-leia(Usuario)
-se (Usuario <> 1234) entao
-   escreval("Usuario Invalido!")
+   escreval("Digite o usuario")
+   leia(Usuario)
+   se (Usuario <> 1234) entao
+      escreval("Usuario Invalido!")
    senao
-        se (Usuario = 1234) entao
-        escreval("Digite a senha:")
-        leia(Senha)
-                se (Senha <> 9999) entao
-                escreval("Senha Invalida!")
-                senao
-                      se (Senha = 9999) entao
-                      escreval("Acesso permitido!")
-                      fimse
-                fimse
-        fimse
-fimse
+      se (Usuario = 1234) entao
+         escreval("Digite a senha:")
+         leia(Senha)
+         se (Senha <> 9999) entao
+            escreval("Senha Invalida!")
+         senao
+            se (Senha = 9999) entao
+               escreval("Acesso permitido!")
+            fimse
+         fimse
+      fimse
+   fimse
 
 Fimalgoritmo

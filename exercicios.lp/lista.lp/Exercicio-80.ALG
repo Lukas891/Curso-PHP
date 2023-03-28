@@ -6,12 +6,10 @@ Algoritmo "Exercicio-80"
 
 Var
 
-   Q: vetor[1..10] de inteiro
+   Q: vetor[1..6] de inteiro
    i, posicao, maior: inteiro
 
 inicio
-
-   maior := 0
    
    para i de 1 ate 5 faca
       escreval("Digite o", i, "º numero:")
@@ -22,6 +20,8 @@ inicio
       fimenquanto
    fimpara
    
+   maior := 0
+
    para i de 1 ate 5 faca
       se (Q[i] > maior) entao
          maior := Q[i]

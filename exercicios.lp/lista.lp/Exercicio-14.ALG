@@ -4,15 +4,15 @@ Algoritmo "Exercicio-14"
 // NÃO É MAIOR QUE 10!
 Var
 
-Valor : real
+   Valor : real
 
 Inicio
 
-escreval("Digite um numero qualquer:")
-leia(Valor)
-           se (Valor > 10) entao
-escreval("É MAIOR QUE 10")
-           senao
-escreval("NÃO É MAIOR QUE 10")
-fimse
+   escreval("Digite um numero qualquer:")
+   leia(Valor)
+   se (Valor > 10) entao
+      escreval("É MAIOR QUE 10")
+   senao
+      escreval("NÃO É MAIOR QUE 10")
+   fimse
 Fimalgoritmo

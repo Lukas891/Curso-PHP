@@ -5,22 +5,22 @@ Algoritmo "Exercicio-16"
 // o custo total da compra.
 Var
 
-M, VP, VN : real
+   M, VP, VN : real
 
 Inicio
 
 
-escreval("Digite quantas macas compradas:")
-leia(M)
-se (M <= 12) entao
-escreval ("Promocao nao aplicada")
-VN := M * 1.30
-escreval("Valor total das macas:",VN," reais")
-senao
-se (M > 12) entao
-escreval("Promocao aplicada")
-VP := M * 1
-escreval("Valor total das macas:",VP," reais")
-fimse
-fimse
+   escreval("Digite quantas macas compradas:")
+   leia(M)
+   se (M <= 12) entao
+      escreval ("Promocao nao aplicada")
+      VN := M * 1.30
+      escreval("Valor total das macas:",VN," reais")
+   senao
+      se (M > 12) entao
+         escreval("Promocao aplicada")
+         VP := M * 1
+         escreval("Valor total das macas:",VP," reais")
+      fimse
+   fimse
 Fimalgoritmo
