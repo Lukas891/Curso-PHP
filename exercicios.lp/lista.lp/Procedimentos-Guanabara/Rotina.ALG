@@ -9,7 +9,6 @@ Var
    P, Mai: real
 Procedimento topo()
 inicio
-
    escreval("-------------------------------------")
    escreval(" D E T E C T O R   DE   P E S A D O")
    escreval(" Maior Peso ate agora: ", Mai, "Kg")
