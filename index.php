@@ -21,7 +21,9 @@
         document.write("Ola mundo JS 2")
     </script>
     <?php
-        echo "Ratchoflais";
+        echo "<br>Ratchoflais";
     ?>
+    <br>
+    <a href="exemplos-php/interacao-form-php/index.html">Exemplo Interacao Form PHP</a>
 </body>
 </html>
