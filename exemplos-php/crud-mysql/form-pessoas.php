@@ -15,6 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         $nome = $pessoas['nome'];
         $email = $pessoas['email'];
         $cpf = $pessoas['cpf'];
+        
     }
     if (array_key_exists('apagar',$_GET)){
         $apagar = $_GET['apagar'];
@@ -31,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     E-mail: <br>
     <input type="text" name="email" value="<?php echo $email; ?>"><br>
     CPF: <br>
-    <input type="number" number="" value="<?php echo $cpf; ?>"><br>
+    <input type="text" name="cpf" value="<?php echo $cpf; ?>"><br>
     <br>
     <input type="submit" value="Gravar">
     <a href="form-pessoas.php">
@@ -48,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $cpf = $_POST['cpf'];
-
+    
     $id = $_POST['id'];
     if($id == ''){
         $msg = incluir($nome, $email, $cpf);
