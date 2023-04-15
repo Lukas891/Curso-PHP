@@ -16,11 +16,12 @@ function conectar(){
 }
 
 // função para incluir uma nova pessoa na tabela
-function incluir($nome, $email, $cpf, $sexo){
+function incluir($nome, $email, $cpf, $sexo, $escolaridade, $senha){
     $con = conectar();
-    $sql = "insert into pessoas(nome, email, cpf, sexo) values('$nome','$email','$cpf','$sexo')";
+    $sql = "insert into pessoas(nome, email, cpf, sexo, escolaridade, senha) 
+    values('$nome','$email','$cpf','$sexo','$escolaridade','$senha')";
     if($con->query($sql) === true){
-        return "Ok ao gravar";
+        //return "Ok ao gravar";
     }else{
         return "Erro: $sql".$con->error;
     }
@@ -36,17 +37,19 @@ function listar(){
 
 function buscar($id){
     $con = conectar();
-    $sql = "select id, nome, email, cpf, sexo from pessoas where id = $id";
+    $sql = "select id, nome, email, cpf, sexo, escolaridade from pessoas where id = $id";
     $resultado = $con->query($sql);
     $resultado = $resultado->fetch_assoc();
     return $resultado;
 }
 
-function alterar($id, $nome, $email, $cpf, $sexo){
+function alterar($id, $nome, $email, $cpf, $sexo, $escolaridade){
     $con = conectar();
-    $sql = "update pessoas set nome = '$nome', email = '$email', cpf = '$cpf', sexo = '$sexo' where id = $id";
+    $sql = "update pessoas set 
+            nome = '$nome', email = '$email', sexo = '$sexo', cpf = '$cpf', escolaridade = '$escolaridade' 
+            where id = $id";
     if($con->query($sql) === true){
-        return "Atualizado";
+        return "<br>***Atualizado***<br>";
     }else{
         return "Erro: $sql".$con->error;
     }
