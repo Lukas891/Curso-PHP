@@ -7,7 +7,9 @@
 <body>
 <?php
 include 'conectar.php';
-$id = $nome = $email = $cpf = $sexo = "";
+include 'validar-cpf.php';
+$msgCpf = $id = $nome = $email = $sexo = $escolaridade = "";
+$cpf = "26400633081";
 if($_SERVER["REQUEST_METHOD"] == "GET"){
     if (array_key_exists('id',$_GET)){
         $id = $_GET['id'];
@@ -16,6 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         $email = $pessoas['email'];
         $cpf = $pessoas['cpf'];
         $sexo = $pessoas['sexo'];
+        $escolaridade = $pessoas['escolaridade'];
         
     }
     if (array_key_exists('apagar',$_GET)){
@@ -23,6 +26,37 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         $msg = apagar($apagar);
         echo $msg;
     }
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $msg = "";
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $cpf = $_POST['cpf'];
+    $sexo = $_POST['sexo'];
+    $escolaridade = $_POST['escolaridade'];
+    $id = $_POST['id'];
+
+    $cpf = str_replace(".","",$cpf);
+    $cpf = str_replace("-","",$cpf);
+
+    if(validarCpf($cpf)){
+        if($id == ''){
+            $senha = $_POST['senha'];
+            $confirmar = $_POST['confirmar'];
+            if($senha == $confirmar){
+                $msg = incluir($nome, $email, $cpf, $sexo, $escolaridade, $senha);
+            }else{
+                $msg = "Senhas divergentes!";
+            }
+            
+        } else {
+            $msg = alterar($id, $nome, $email, $cpf, $sexo, $escolaridade);
+        }
+    }else{
+        $msgCpf = "CPF inválido!";
+    }
+    
+    echo $msg;
 }
 ?>
 <form action="form-pessoas.php" method="post">
@@ -32,38 +66,37 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     <input type="text" name="nome" value="<?php echo $nome; ?>"required><br>
     E-mail: <br>
     <input type="text" name="email" value="<?php echo $email; ?>"required><br>
-    CPF: <br>
+    CPF:<?php echo $msgCpf; ?> <br>
     <input type="text" name="cpf" value="<?php echo $cpf; ?>"required><br>
-    Sexo: <br>
-    <input type="radio" name="sexo" value="m" <?php if($sexo == "m") echo "checked"; ?>>Masculino
-    <input type="radio" name="sexo" value="f" <?php if($sexo == "f") echo "checked"; ?>>Feminino
     <br>
+    Sexo: <br>
+    <input type="radio" name="sexo" value="m" required <?php if($sexo == "m") echo "checked"; ?>>Masculino
+    <input type="radio" name="sexo" value="f" required <?php if($sexo == "f") echo "checked"; ?>>Feminino
+    <br>
+    <br>
+    Escolaridade <br>
+    <select name="escolaridade">
+        <option value="">Selecione</option>
+        <option <?php if($escolaridade == "Ensino Médio") { echo "selected"; }?> value="Ensino Médio">Ensino Médio</option>
+        <option <?php if($escolaridade == "Superior Incompleto") { echo "selected"; }?> value="Superior Incompleto">Superior Incompleto</option>
+        <option <?php if($escolaridade == "Superior Completo") { echo "selected"; }?> value="Superior Completo">Superior Completo</option>
+    </select>
+    <br>
+    <?php if (!isset($_GET['id'])) { ?>
+        <br>
+        Senha: <br>
+        <input type="password" name="senha" required>
+        <br>
+        Confirmar Senha: <br>
+        <input type="password" name="confirmar">
+      <?php } ?>
+      <br>
     <br>
     <input type="submit" value="Gravar">
     <a href="form-pessoas.php">
     <input type="button" value="Novo">
     </a>
-    <input type="button" value="Apagar">
 </form>
-<?php
-//  onclick="window.location.replace('form-pessoas.php');"
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $cpf = $_POST['cpf'];
-    $sexo = $_POST['sexo'];
-    
-    $id = $_POST['id'];
-    if($id == ''){
-        $msg = incluir($nome, $email, $cpf, $sexo);
-    } else {
-        $msg = alterar($id, $nome, $email, $cpf, $sexo);
-    }
-    
-    echo $msg;
-}
-
-?>
 <br>
 <table border="1">
     <tr>
@@ -88,6 +121,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "</tr>";
     }
     ?>
+    <script>
+        function apagar(id){
+            return confirm("Deseja Apagar o registro ID("+id+")?");
+        }
+    </script>
 </table>
 </body>
 </html>
