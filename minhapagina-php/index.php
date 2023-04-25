@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>
-    <?php echo"Campeoes da Champions League \u{26BD} em cada ano \u{1F3C6}";?>
+    <?php echo"Campeoes da Champions League! \u{26BD} em cada ano \u{1F3C6}";?>
     </h1>
     
     
