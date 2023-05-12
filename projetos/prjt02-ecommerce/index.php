@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-
 <body>
     <style>
         a {
@@ -23,11 +22,16 @@
         h2 {
             text-align: center;
         }
+        #pagina-admin {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+        }
 
         #carrinho-principal {
             position: fixed;
             right: 10px;
-            bottom: 10px;
+            bottom: 60px;
         }
 
         .up,
@@ -40,40 +44,31 @@
     </style>
     <div class="container"><br>
         <h2>🌎Global Sports🌍</h2><br>
+        <?php 
+    include('conectar.php');
+    $sql = "select * from produtos";
+    $resultado = conectar($sql);
+    $i = 0;
+    while ($linha = $resultado->fetch_assoc()) {
+        $nome = $linha["nome"];
+        $valor = $linha["valor"];
+        $imagem = $linha["imagem"];
+        $id = $linha["id"];
+    ?>
         <div class="card">
-            <img src="https://imgcentauro-a.akamaihd.net/900x900/97264605/camisa-barcelona-i-22-23-torcedor-nike-masculina-img.jpg"
-                alt="" class="card-img-top">
+            <img class="card-img-top" src="<?php echo $imagem; ?>" alt="Card image" style="width: 100%">
             <div class="card-body">
-                <h4 class="card-title">Blusa Barcelona 22/23</h4>
-                <p class="card-text">R$ 250,00<a href="#" onclick="addItem(0)" class="btn btn-outline-info">🛒</a></p>
+                <h4 class="card-title"><?php echo $nome; ?></h4>
+                <p class="card-text">R$: <?php echo $valor; ?></p>
+                    <a href="#" class="btn btn-outline-info" onclick="addItem(<?php echo $i?>)" >🛒</a>
             </div>
         </div>
-        <div class="card">
-            <img src="https://static.netshoes.com.br/produtos/chuteira-nike-mercurial-superfly-9-club-campo/14/JD8-1691-014/JD8-1691-014_zoom1.jpg?ts=1674566730"
-                alt="" class="card-img-top">
-            <div class="card-body">
-                <h4 class="card-title">Chuteira Nike Mercurial</h4>
-                <p class="card-text">R$ 499,00<a href="#" onclick="addItem(1)" class="btn btn-outline-info">🛒</a></p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://pbs.twimg.com/media/FAw8DgsWUAAgf29.jpg:large"
-                alt="" class="card-img-top">
-            <div class="card-body">
-                <h4 class="card-title">Chuteira Nike Total 90</h4>
-                <p class="card-text">R$ 399,00<a href="#" onclick="addItem(2)" class="btn btn-outline-info">🛒</a></p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://17889.cdn.simplo7.net/static/17889/sku/masculino-acessorios-bola-adidas-a020006-champions-leage-futsal--p-1565993154128.jpg" alt=""
-                class="card-img-top">
-            <div class="card-body">
-                <h4 class="card-title">Bola Adidas Falcon</h4>
-                <p class="card-text">R$ 149,90<a href="#" onclick="addItem(3)" class="btn btn-outline-info">🛒</a></p>
-            </div>
-        </div>
+        <?php  $i++;
+        }
+        ?>
     </div>
 
+    <a href="admin.php" id="pagina-admin" class="btn btn-warning btn-lg">Pagina Admin</a>
     <a href="#" id="carrinho-principal" class="btn btn-primary btn-lg" onclick="carrinho()" data-bs-toggle="modal"
         data-bs-target="#myModal">🛒</a>
 

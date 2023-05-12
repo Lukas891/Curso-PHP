@@ -1,6 +1,6 @@
 <?php 
 $pasta = "arquivos/"; // onde os arquivos serão salvos
-$arquivos = $pasta.basename($_FILES["fileToUpload"]["name"]); 
+$arquivo = $pasta.basename($_FILES["fileToUpload"]["name"]); 
 // echo $arquivo;
 $uploadOk = 1;
 $tipoArquivo = strtolower(pathinfo($arquivo,PATHINFO_EXTENSION));

@@ -41,10 +41,11 @@ include('gravar-produto.php');
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Enviar</button>
                     <a href="admin.php" class="btn btn-success">Novo</a>
-                    <a href="login.php" class="btn btn-danger">Sair</a>
+                    <a href="login.php" class="btn btn-danger">Sair</a><br>
+                    
                 </form>
                 <?php 
-                if ($msg != "") {
+                if ($msg != ""){
                 ?>
                     <br>
                     <div class="alert alert-<?php echo $tpMsg; ?> alert-dismissible">
@@ -58,7 +59,7 @@ include('gravar-produto.php');
         <?php 
         include('listar-produto.php');
         ?>
-           
+        <a href="index.php" class="btn btn-warning">Ir para a loja</a><br>  
 
 </body>
 

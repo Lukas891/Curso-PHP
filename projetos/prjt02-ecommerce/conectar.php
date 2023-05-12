@@ -3,7 +3,7 @@ function conectar($sql) {
     $id = "";
     $senha = "";
 
-    $hostweb = false; // false para usar no localhost, e true para usar no webhost
+    $hostweb = true; // false para usar no localhost, e true para usar no webhost
     if ($hostweb){
         $id = "id20609830_"; // id ou prefixo do 000webhost
         $senha = "Lukinhas891@"; // senha do 000webhost
@@ -16,10 +16,6 @@ function conectar($sql) {
 
     if ($con->connect_error) {
         die("Erro :".$con->connect_error);
-    }
-    if (str_contains($sql,"insert")) {
-        $con->query($sql);
-        return $con->insert_id;
     }
     return $con->query($sql);
 }
