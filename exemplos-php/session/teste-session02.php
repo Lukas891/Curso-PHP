@@ -12,13 +12,9 @@ session_start();
     $nome = $_SESSION['nome'];
     $perfil = $_SESSION['perfil'];
 
-    echo "Usuario: $nome <br>";  
-    echo "Perfil:($perfil)";
+    echo "Usuário: $nome Perfil:($perfil)";
 
     print_r($_SESSION);
-    
     ?>
-    
 </body>
 </html>
-

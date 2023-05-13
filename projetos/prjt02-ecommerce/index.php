@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Doces Dona Nita</title>
+    <title>Global Sports</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -49,7 +49,7 @@
     $sql = "select * from produtos";
     $resultado = conectar($sql);
     $i = 0;
-    while ($linha = $resultado->fetch_assoc()) {
+    while ($linha = $resultado->fetch_assoc()){
         $nome = $linha["nome"];
         $valor = $linha["valor"];
         $imagem = $linha["imagem"];
@@ -59,7 +59,7 @@
             <img class="card-img-top" src="<?php echo $imagem; ?>" alt="Card image" style="width: 100%">
             <div class="card-body">
                 <h4 class="card-title"><?php echo $nome; ?></h4>
-                <p class="card-text">R$: <?php echo $valor; ?></p>
+                <p class="card-text">R$:<?php echo $valor; ?></p>
                     <a href="#" class="btn btn-outline-info" onclick="addItem(<?php echo $i?>)" >🛒</a>
             </div>
         </div>

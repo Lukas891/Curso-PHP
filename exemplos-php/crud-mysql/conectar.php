@@ -18,10 +18,10 @@ function conectar(){
 // função para incluir uma nova pessoa na tabela
 function incluir($nome, $email, $cpf, $sexo, $escolaridade, $senha){
     $con = conectar();
-    $sql = "insert into pessoas(nome, email, cpf, sexo, escolaridade, senha) 
-    values('$nome','$email','$cpf','$sexo','$escolaridade','$senha')";
+    $sql = "insert into pessoa(nome, email, cpf, sexo, escolaridade, senha) 
+            values('$nome','$email','$cpf', '$sexo','$escolaridade', '$senha')";
     if($con->query($sql) === true){
-        //return "Ok ao gravar";
+        return "Ok ao gravar";
     }else{
         return "Erro: $sql".$con->error;
     }
@@ -30,14 +30,14 @@ function incluir($nome, $email, $cpf, $sexo, $escolaridade, $senha){
 // buscar todas as pessoas que estão gravadas no banco
 function listar(){
     $con = conectar();
-    $sql = "select id, nome, email, cpf, sexo from pessoas";
+    $sql = "select id, ucase(nome) as nome, email, cpf, ucase(sexo) as sexo from pessoa";
     $resultado = $con->query($sql);
     return $resultado;
 }
 
 function buscar($id){
     $con = conectar();
-    $sql = "select id, nome, email, cpf, sexo, escolaridade from pessoas where id = $id";
+    $sql = "select id, nome, email, cpf, sexo, escolaridade from pessoa where id = $id";
     $resultado = $con->query($sql);
     $resultado = $resultado->fetch_assoc();
     return $resultado;
@@ -45,11 +45,11 @@ function buscar($id){
 
 function alterar($id, $nome, $email, $cpf, $sexo, $escolaridade){
     $con = conectar();
-    $sql = "update pessoas set 
-            nome = '$nome', email = '$email', sexo = '$sexo', cpf = '$cpf', escolaridade = '$escolaridade' 
+    $sql = "update pessoa set 
+            nome = '$nome', email = '$email', cpf = '$cpf', sexo = '$sexo', escolaridade = '$escolaridade'
             where id = $id";
     if($con->query($sql) === true){
-        return "<br>***Atualizado***<br>";
+        return "Ok ao Atualizar";
     }else{
         return "Erro: $sql".$con->error;
     }
@@ -57,9 +57,9 @@ function alterar($id, $nome, $email, $cpf, $sexo, $escolaridade){
 
 function apagar($id){
     $con = conectar();
-    $sql = "delete from pessoas where id = $id";
+    $sql = "delete from pessoa where id = $id";
     if($con->query($sql) === true){
-        return "Apagado";
+        return "Ok ao Apagar";
     }else{
         return "Erro: $sql".$con->error;
     }

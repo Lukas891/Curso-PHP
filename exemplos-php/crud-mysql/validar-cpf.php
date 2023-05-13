@@ -22,7 +22,7 @@ function validarDigito($cpf, $d){
         // echo " - ";
         // echo (10 + $d)-$i;
         // echo " = ";
-        $soma += ($cpf[$i] * ((10 + $d)-$i));
+        $soma += $cpf[$i] * ((10 + $d)-$i);
         // echo $cpf[$i] * ((10 + $d)-$i);
         // echo "<br>";
     }

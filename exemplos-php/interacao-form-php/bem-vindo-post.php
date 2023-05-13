@@ -1,13 +1,13 @@
-<?php 
-// exemplo usando o metoto POST.
+<?php
+//  exemplo usando o metodo POST.
 $nome = $_POST["nome"];
 $email = $_POST["email"];
 $idade = $_POST["idade"];
 
-echo "Bem vindo ao mundo PHP! $nome <br>";
+echo "Bem Vindo ao mundo PHP $nome <br>";
 echo "E-mail registrado $email <br>";
-echo "Idade $idade";
+echo "Idade $idade <br>";
+
 ?>
-<br>
-<br>
-<a href="/curso-php/exemplos-php/interacao-form-php/index.html">Voltar</a>
+
+<a href="index.html">Voltar</a>

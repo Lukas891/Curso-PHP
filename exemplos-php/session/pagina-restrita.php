@@ -1,7 +1,6 @@
-<?php 
+<?php
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +11,12 @@ session_start();
     <?php
         if(isset($_SESSION['login'])){
             $login = $_SESSION['login'];
-                echo "Bem-Vindo $login";
+            echo "Bem vindo $login";
+            echo "<br><a href='limpar-session.php'>Logoff</a>";
         }else{
-                echo "Acesso Negado.";
-                echo "<br><a href='login-session.php'>Login</a>";
+            echo "Acesso Negado.";
+            echo "<br><a href='login.php'>Login</a>";
         }
     ?>
-    
 </body>
 </html>

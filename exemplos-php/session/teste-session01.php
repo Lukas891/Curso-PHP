@@ -9,11 +9,9 @@ session_start();
 </head>
 <body>
     <?php
-    $_SESSION['nome'] = "Lucas Machado";
+    $_SESSION['nome'] = "Luiz Felipe";
     $_SESSION['perfil'] = "Admin";
     echo "Variaveis na session.";
     ?>
-    
 </body>
 </html>
-

@@ -1,13 +1,10 @@
 <?php
-
 session_start();
-//inicia a sessao(onde salva as credenciais para utilizar nas paginas)
 
+// remove all session variables
 session_unset();
-// remove todas as variaveis da sessao
 
+// destroy the session
 session_destroy();
-// destroi a sessao
-
-
+header("Location: login.php");
 ?>
