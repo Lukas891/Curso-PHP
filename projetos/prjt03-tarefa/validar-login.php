@@ -1,11 +1,11 @@
 <?php 
-session_start(); // dando start na sessao(tem exemplo na pasta do curso sobre session)
+session_start();
     $acesso = "";
-    if (isset($_POST["email"])) { // metodo POST para validar a segurança do email
+    if (isset($_POST["email"])) {
         include('conectar.php');
         $email = $_POST["email"];
         $senha = $_POST["senha"];
-        $retorno = conectar("select * from usuario where email = '$email' and senha = '$senha';");
+        $retorno = conectar("select * from admin where email = '$email' and senha = '$senha';");
     
     if ($linha = $retorno->fetch_assoc()){
         $_SESSION['acesso-restrito'] = true;
