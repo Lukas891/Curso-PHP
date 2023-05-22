@@ -16,8 +16,9 @@
     <div class="container mt-3">
         <div class="row justify-content-center">
             <div class="col-8">
-                <br>
-                <h2>Criar nova tarefa</h2><br>
+                <h2>
+                <a href="admin.php" class="btn btn-danger">Voltar</a><br>
+                Criar nova tarefa</h2><br>
                 <?php
                 if (isset($_GET['qt-opcoes'])) {
                     include "form-nova-tarefa.php";
@@ -25,7 +26,7 @@
                     include "gravar-tarefa.php";
                 } else {
                     include "form-nova-tarefa.php";
-                }
+                } 
                 ?>
             </div>
         </div>

@@ -1,26 +1,29 @@
 <?php 
-function conectar($sql){
-    $servidor = "localhost";
-    $usuario = "root";
-    $senha = "";
-    $banco = "mydb";
+function conectar($sql) {
     $id = "";
+    $senha = "";
 
-    if (false){
+    $hostweb = false; 
+    if ($hostweb){
         $id = "id20609830_"; 
-        $senha = "Lukinhas891@";
+        $senha = "Lukinhas891@"; 
     }
-    
-    $senha = $id.$senha;
-    $banco = $id.$banco;
+    $servidor = "localhost";
+    $usuario = $id."root";
+    $banco = $id."mydb";
 
     $con = new mysqli($servidor, $usuario, $senha, $banco);
-        
-    if($con->connect_error) {
-        die ("Erro: ".$con->connect_error);  
+
+    if ($con->connect_error) {
+        die("Erro :".$con->connect_error);
     }
     return $con->query($sql);
-
+}
+function listar(){
+    $con = conectar();
+    $sql = "select id, ucase(nome) as nome, email, cpf, ucase(sexo) as sexo from pessoa";
+    $resultado = $con->query($sql);
+    return $resultado;
 }
 
 function alterar($id, $nome){
@@ -44,5 +47,4 @@ function apagar($id){
         return "Erro: $sql".$con->error;
     }
 }
-
 ?>

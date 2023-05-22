@@ -17,6 +17,8 @@
         <div class="row justify-content-center">
             <div class="col-8">
                 <br>
+                <a href="destroy.php" class="btn btn-danger">Sair</a>
+                <a href="alterar-senha.php" class="btn btn-primary">Alterar senha</a>
                 <h2>Lista de tarefas</h2><br>
                 <table class="table table-striped">
                     <tr>
@@ -38,8 +40,7 @@
                     }
                     ?>
                 </table>
-                <a href="criar-tarefa.php" class="btn btn-warning">Nova tarefa</a>
-                <a href="destroy.php" class="btn btn-danger">Sair</a>
+                <a href="criar-tarefa.php" class="btn btn-outline-success btn-sm">➕</a>
             </div>
         </div>
     </div>
