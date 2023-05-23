@@ -28,17 +28,21 @@
                     </tr>
                     <?php
                     include "conectar.php";
-                    $retorno = conectar("select * from tarefa;");
-                    while ($linha = $retorno->fetch_assoc()) {
+                    $result = conectar("select * from tarefa;");
+                    while ($linha = $result->fetch_assoc()) {
                         $id = $linha['id'];
                         $nome = $linha['nome'];
                         echo "<tr>
-                <td>$nome</td>
-                <td class='text-center'><a href='editar-tarefa.php?id-tarefa=$nome'class='btn btn-outline-primary btn-sm'>✏</a></td>
-                <td class='text-center'><a href='apagar-tarefa.php?id-tarefa=$id'class='btn btn-outline-danger btn-sm'>🗑</a></td>
-                </tr>";
+                            <td>$nome</td>
+                            <td><a href='alterar-tarefa.php?id=$nome'class='btn btn-outline-primary btn-sm'>✏</a></td>
+                            <td><a href='apagar-tarefa.php?id=".$linha['id']." 'class='btn btn-outline-danger btn-sm'>🗑</a></td>";
                     }
                     ?>
+                    <script>
+                        function apagar(id) {
+                            return confirm("Deseja Apagar o registro ID("+id+")?");
+                        }
+                    </script>
                 </table>
                 <a href="criar-tarefa.php" class="btn btn-outline-success btn-sm">➕</a>
             </div>
