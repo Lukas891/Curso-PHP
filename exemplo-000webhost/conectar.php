@@ -4,7 +4,7 @@ function conectar(){
     $id = "";
     $senha = "";
 
-    $hostweb = true;
+    $hostweb = false;
     if($hostweb){
         $id = "id20602874_";
         $senha = "Xnqi\jZ*(8Tb^4B=";

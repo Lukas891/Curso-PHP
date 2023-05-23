@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Criar nova tarefa</title>
+    <title>Alterar tarefa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -18,14 +18,12 @@
             <div class="col-8">
                 <h2>
                 <a href="admin.php" class="btn btn-danger">Voltar</a><br>
-                Criar nova tarefa</h2><br>
+                Editar tarefa</h2><br>
                 <?php
-                if (isset($_GET['qt-opcoes'])) {
-                    include "form-nova-tarefa.php";
-                } elseif (isset($_GET['nome-tarefa'])) {
-                    include "gravar-tarefa.php";
+                if (isset($_GET['alterar'])) {
+                    include "upload-tarefa.php";
                 } else {
-                    include "form-nova-tarefa.php";
+                    include "form-alterar-tarefa.php";
                 }
                 ?>
             </div>
