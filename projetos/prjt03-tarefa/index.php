@@ -1,4 +1,6 @@
 <?php
+$msg = "";
+$tpMsg = "";
 include('validar-login.php');
 ?>
 <!DOCTYPE html>
@@ -17,7 +19,7 @@ include('validar-login.php');
         }
     </style>
     <br>
-    <?php include("login.php"); ?>
+    
     <div class="container mt-3">
         <div class="row justify-content-center">
             <div class="col-6">

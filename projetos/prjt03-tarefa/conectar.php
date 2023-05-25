@@ -27,24 +27,17 @@ function listar(){
 }
 
 function alterar($id, $nome){
-    $con = conectar();
+    
     $sql = "update tarefa set 
             nome = '$nome'
             where id = $id";
-    if($con->query($sql) === true){
+        conectar($sql);
         return "Ok ao Atualizar";
-    }else{
-        return "Erro: $sql".$con->error;
-    }
 }
 
 function apagar($id){
-    $con = conectar();
     $sql = "delete from tarefa where id = $id";
-    if($con->query($sql) === true){
-        return "Ok ao Apagar";
-    }else{
-        return "Erro: $sql".$con->error;
-    }
+    conectar($sql);
+    return "Ok ao Apagar";
 }
 ?>

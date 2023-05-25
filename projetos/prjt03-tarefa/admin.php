@@ -1,3 +1,4 @@
+<?php include('validar-acesso.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +19,7 @@
             <div class="col-8">
                 <br>
                 <a href="destroy.php" class="btn btn-danger">Sair</a>
-                <a href="alterar-senha.php" class="btn btn-primary">Alterar senha</a>
+                <a href="form-alterar-senha.php" class="btn btn-primary">Alterar senha</a>
                 <h2>Lista de tarefas</h2><br>
                 <table class="table table-striped">
                     <tr>
@@ -28,13 +29,13 @@
                     </tr>
                     <?php
                     include "conectar.php";
-                    $result = conectar("select * from tarefa;");
+                    $result = conectar("SELECT * from tarefa where id_admin = $id_admin;");
                     while ($linha = $result->fetch_assoc()) {
                         $id = $linha['id'];
                         $nome = $linha['nome'];
                         echo "<tr>
                             <td>$nome</td>
-                            <td><a href='alterar-tarefa.php?id=$nome'class='btn btn-outline-primary btn-sm'>✏</a></td>
+                            <td><a href='editar.php?id=$id&nome=$nome'class='btn btn-outline-primary btn-sm'>✏</a></td>
                             <td><a href='apagar-tarefa.php?id=".$linha['id']." 'class='btn btn-outline-danger btn-sm'>🗑</a></td>";
                     }
                     ?>

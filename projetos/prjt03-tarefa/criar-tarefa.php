@@ -1,3 +1,4 @@
+<?php include('validar-acesso.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
